@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawVisualization);
+
+
+      function drawVisualization() {
+        // Some raw data (not necessarily accurate)
+        var data = google.visualization.arrayToDataTable([
+         ['Year', 'United States', 'China', 'Russia', 'France', 'United Kingdom', 'Japan', 'Germany', 'Saudi Arabia', 'India', 'South Korea'],
+         ['2010',  687.1,    114.3,       61.3,             61.2,           57.4,      51.4,	46.8,	42.9,		34.8,		24.2],
+         ['2011',  711,      143,         71.9,             62.7,           62.5,      59.3,	48.7,	48.9,		48.5,		30.8],
+         ['2012',  682,      166,         90.7,             60.8,           58.9,      57.3,	45.8,	44.5,		44.1,		31.7],
+         ['2013',  640,      188,         87.8,             61.2,           57.9,      48.9,	48.8,	47.6,		47.1,		33.9],
+         ['2014',  610,      216,         84.5,             62.3,           60.5,      46.8,	46.5,	46.1,		45.8,		36.7],
+      ]);
+
+    var options = {
+      title : 'Top 10 Countries In Military Spending (2010-2014)',
+      vAxis: {title: 'Military Spending($b.)'},
+      hAxis: {title: 'Year'},
+      seriesType: 'bars'
+    };
+
+    var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
+  }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 1200px; height: 750px;"></div>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Temperatures(in F)', 'Number of States'],
+          [ 100,      			2	   ],
+          [ 104,      			1          ],
+          [ 105,     			1          ],
+          [ 106,      			2          ],
+          [ 107,      			2          ],
+          [ 108,    			1          ],
+          [ 109,    			2          ],
+          [ 110,    			4          ],
+          [ 111,    			1          ],
+          [ 112,    			4          ],
+          [ 113,    			3          ],
+          [ 114,    			4          ],
+          [ 115,    			3          ],
+          [ 116,    			1          ],
+          [ 117,    			3          ],
+          [ 118,    			5          ],
+          [ 119,    			1          ],
+          [ 120,    			4          ],
+          [ 121,    			2          ],
+          [ 122,    			1          ],
+          [ 125,    			1          ],
+          [ 128,    			1          ],
+          [ 134,    			1          ]
+        ]);
+
+        var options = {
+          title: 'Distribution of the Record High Temperatures for the 50 States',
+          hAxis: {title: 'Temperatures(in F)', minValue: 100, maxValue: 140},
+          vAxis: {title: 'Number of States', minValue: 0, maxValue: 6},
+          legend: 'none'
+        };
+
+        var chart = new google.visualization.ScatterChart(document.getElementById('chart_div'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>

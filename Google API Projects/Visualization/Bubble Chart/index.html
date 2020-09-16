@@ -1,0 +1,85 @@
+<head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var data = google.visualization.arrayToDataTable([
+        ['Country',		'Birth Rate', 			'Death Rate', 		'Region' ,   	'Population'],
+        ['Russia',   		11.87,     		13.83,      		'Central Asia', 	142470272],
+        ['Canada',   		10.29,     		8.31,      		'North America',   	34834841],
+        ['United States',   	13.42,     		8.15,      		'North America',  	318892103],
+        ['China',   		12.17,        		7.44,      		'East & Southeast Asia', 1355692576],
+        ['Brazil',  	  	14.72,              	6.54,      		'South America', 	202656788],
+	['Australia', 	  	12.19,              	7.07,      		'Australia-Oceania', 	22507617],
+        ['India',      		19.89,              	7.35,      		'South Asia', 		1236344631],
+        ['Argentina',    	16.88,              	7.34,      		'South America', 	43024374],
+        ['Kazakhstan',    	19.61,              	8.31,      		'Central Asia', 	17948816],
+        ['Algeria',    	  	23.99,              	4.31,      		'Africa', 		38813722],
+	['Democratic Republic of the Congo',    	35.62,         10.3,	'Africa', 		77433744],
+	['Greenland',    	14.53,              	8.38,      		'North America', 	57728],
+	['Saudi Arabia',    	18.78,              	3.32,      		'Middle East', 		327345986],
+	['Mexico',    	  	19.02,              	5.24,      		'North America', 	120286655],
+	['Indonesia',    	17.04,              	6.34,      		'East & Southeast Asia', 253609643],
+	['Sudan',    	  	30.01,              	7.87,      		'Africa', 		35482233],
+	['Libya',    	  	18.4,               	3.57,      		'Africa', 		6244174],
+	['Iran',    	  	18.23,              	5.94,      		'Middle East', 		80840713],
+	['Mongolia',    	20.88,              	6.38,      		'East & Southeast Asia', 2953190],
+	['Peru',    	  	18.57,              	5.99,      		'South America', 	30147935],
+	['Chad',    	  	37.29,              	14.56,      		'Africa', 		11412107],
+	['Niger',    	  	46.12,              	12.73,      		'Africa', 		17466172],
+	['Angola',    	  	38.97,              	11.67,      		'Africa', 		19088106],
+	['Mali',    	  	45.53,              	13.22,      		'Africa', 		16455903],
+	['South Africa',    	18.94,              	17.49,      		'Africa', 		48375645],
+	['Colombia',    	16.73,              	5.36,      		'South America', 	46245297],
+	['Ethiopia',    	37.66,              	8.52,      		'Africa', 		96633458],
+	['Bolivia',    		23.28,              	6.59,      		'South America', 	10631486],
+	['Mauritania',    	31.83,              	8.35,      		'Africa', 		3516806],
+	['Egypt',    		23.35,              	4.77,      		'Africa', 		86895099],
+	['Tanzania',    	36.82,              	8.20,      		'Africa', 		49639138],
+	['Nigeria',    		38.03,              	13.16,      		'Africa', 		177155754],
+	['Venezuela',    	19.42,              	5.27,      		'South America', 	28868486],
+	['Namibia',    		20.28,              	13.60,      		'Africa', 		2198406],
+	['Mozambique',    	38.83,              	12.34,      		'Africa', 		24692144],
+	['Pakistan',    	23.19,               	6.58,      		'South Asia', 		196174380],
+	['Turkey',    	  	16.86,               	6.12,      		'Middle East', 		81619392],
+	['Chile',    	  	13.97,               	5.93,      		'South America', 	17363894],
+	['Zambia',    	  	42.46,               	12.92,      		'Africa', 		14638505],
+	['Burma',    	  	18.65,               	8.01,      		'East & Southeast Asia', 55746253],
+	['Afghanistan',    	38.84,               	14.12,      		'South Asia', 		31822848],
+	['South Sudan',    	37.68,               	8.42,      		'Africa', 		11562695],
+	['France',    	  	12.49,               	9.06,      		'Europe', 		66259012],
+	['Somalia',    	  	40.87,               	13.91,      		'Africa', 		104284043],
+	['Central African Republic',    	  	35.45,         14.11,   'Africa', 		5277959],
+	['Ukraine',    	  	9.41,               	15.72,      		'Europe', 		44291413],
+	['Madagascar',    	33.12,               	6.95,      		'Africa', 		23201926],
+	['Botswana',    	21.34,               	13.32,      		'Africa', 		2155784],
+	['Kenya',    	  	28.27,               	7.00,      		'Africa', 		66259012],
+	['Yemen',    	  	31.01,               	6.45,      		'Middle East', 		26052966]
+      ]);
+
+      var options = {
+        title: 'Comparison between the birth rate, death rate' +
+               ' and population of the top 50 countries with the largest geographical area',
+        hAxis: {title: 'Birth Rate (per 1000 population)'},
+        vAxis: {title: 'Death Rate (per 1000 population)'},
+        bubble: {
+          textStyle: {
+            color: 'none',
+            auraColor: 'none',
+          }
+        }
+      };
+
+      var chart = new google.visualization.BubbleChart(document.getElementById('noAura'));
+
+      chart.draw(data, options);
+    }
+  </script>
+</head>
+<body>
+  <div id="noAura" style="width: 1080px; height: 900px;"></div>
+</body>
+</html>
